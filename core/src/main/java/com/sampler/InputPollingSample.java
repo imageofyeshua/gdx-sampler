@@ -14,7 +14,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class InputPollingSample implements ApplicationListener {
 
-    private static final Logger log = new Logger(GdxModuleSample.class.getName(), Logger.DEBUG);
+    private static final Logger log = new Logger(InputPollingSample.class.getName(), Logger.DEBUG);
 
     private OrthographicCamera camera;
     private Viewport viewport;
