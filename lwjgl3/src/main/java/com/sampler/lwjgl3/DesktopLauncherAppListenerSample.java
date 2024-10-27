@@ -1,11 +1,8 @@
 package com.sampler.lwjgl3;
 
-import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
-import com.sampler.AppListenerSample;
 import com.sampler.GdxModuleSample;
-import com.sampler.GdxSamplerGame;
 
 /** Launches the desktop (LWJGL3) application. */
 public class DesktopLauncherAppListenerSample {

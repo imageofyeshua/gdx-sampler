@@ -2,7 +2,6 @@ package com.sampler.lwjgl3;
 
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
-import com.sampler.GdxSamplerGame;
 import com.sampler.InputPollingSample;
 
 /** Launches the desktop (LWJGL3) application. */

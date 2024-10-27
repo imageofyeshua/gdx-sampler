@@ -1,26 +1,23 @@
 package com.sampler.lwjgl3;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
-import com.sampler.GdxModuleSample;
+import com.sampler.GdxReflectionSample;
 
 /** Launches the desktop (LWJGL3) application. */
-public class DesktopLauncherGdxModuleSample {
+public class DesktopLauncherGdxReflection {
     public static void main(String[] args) {
         if (StartupHelper.startNewJvmIfRequired()) return; // This handles macOS support and helps on Windows.
-        System.out.println("before application start" + Gdx.app);
         createApplication();
-        System.out.println("after application start" + Gdx.app);
     }
 
     private static Lwjgl3Application createApplication() {
-        return new Lwjgl3Application(new GdxModuleSample(), getDefaultConfiguration());
+        return new Lwjgl3Application(new GdxReflectionSample(), getDefaultConfiguration());
     }
 
     private static Lwjgl3ApplicationConfiguration getDefaultConfiguration() {
         Lwjgl3ApplicationConfiguration configuration = new Lwjgl3ApplicationConfiguration();
-        configuration.setTitle("Gdx Module Info Sample");
+        configuration.setTitle("GdxSampler");
         //// Vsync limits the frames per second to what your hardware can display, and helps eliminate
         //// screen tearing. This setting doesn't always work on Linux, so the line after is a safeguard.
         configuration.useVsync(true);
