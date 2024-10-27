@@ -33,14 +33,61 @@ public class InputListeningSample implements ApplicationListener, InputProcessor
         batch = new SpriteBatch();
         font = new BitmapFont(Gdx.files.internal("fonts/oswald-32.fnt"));
 
-//        Gdx.input.setInputProcessor(this);
-        Gdx.input.setInputProcessor(new InputAdapter() {
+        InputMultiplexer multiplexer = new InputMultiplexer();
+
+        InputAdapter firstAdapter = new InputAdapter() {
             @Override
             public boolean keyDown(int keycode) {
-                log.debug("Keydown " + keycode);
+                log.debug("first keyDown keycode: " + keycode);
                 return true;
             }
-        });
+
+            @Override
+            public boolean keyUp(int keycode) {
+                log.debug("first keyUp keycode: " + keycode);
+                return false;
+            }
+
+            @Override
+            public boolean keyTyped(char character) {
+                log.debug("first keyTyped keycode: " + character);
+                return false;
+            }
+        };
+
+        InputAdapter secondAdapter = new InputAdapter() {
+            @Override
+            public boolean keyDown(int keycode) {
+                log.debug("second keyDown keycode: " + keycode);
+                return true;
+            }
+
+            @Override
+            public boolean keyUp(int keycode) {
+                log.debug("second keyUp keycode: " + keycode);
+                return false;
+            }
+
+            @Override
+            public boolean keyTyped(char character) {
+                log.debug("second keyTyped keycode: " + character);
+                return false;
+            }
+        };
+
+        multiplexer.addProcessor(firstAdapter);
+        multiplexer.addProcessor(secondAdapter);
+
+        Gdx.input.setInputProcessor(multiplexer);
+
+//        Gdx.input.setInputProcessor(this);
+//        Gdx.input.setInputProcessor(new InputAdapter() {
+//            @Override
+//            public boolean keyDown(int keycode) {
+//                log.debug("Keydown " + keycode);
+//                return true;
+//            }
+//        });
     }
 
     @Override
