@@ -2,7 +2,7 @@ package com.sampler.lwjgl3;
 
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
-import com.sampler.GdxSamplerGame;
+import com.sampler.GdxGeneratedSample;
 
 /** Launches the desktop (LWJGL3) application. */
 public class DesktopLauncher {
@@ -12,7 +12,7 @@ public class DesktopLauncher {
     }
 
     private static Lwjgl3Application createApplication() {
-        return new Lwjgl3Application(new GdxSamplerGame(), getDefaultConfiguration());
+        return new Lwjgl3Application(new GdxGeneratedSample(), getDefaultConfiguration());
     }
 
     private static Lwjgl3ApplicationConfiguration getDefaultConfiguration() {
