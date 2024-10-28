@@ -3,6 +3,8 @@ package com.sampler.lwjgl3;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.lwjgl.LwjglAWTCanvas;
 import com.badlogic.gdx.utils.reflect.ClassReflection;
+import com.sampler.common.SampleFactory;
+import com.sampler.common.SampleInfos;
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,9 +60,7 @@ public class GdxSamplerLauncher extends JFrame {
         c.fill = GridBagConstraints.VERTICAL;
         c.weighty = 1;
 
-        sampleList = new JList(
-            new String[] {"com.sampler.InputPollingSample"}
-        );
+        sampleList = new JList(SampleInfos.getSampleNames().toArray());
         sampleList.setFixedCellWidth(CELL_WIDTH);
         sampleList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         sampleList.addMouseListener(new MouseAdapter() {
@@ -112,18 +112,7 @@ public class GdxSamplerLauncher extends JFrame {
             container.remove(lwjglAWTCanvas.getCanvas());
         }
 
-        ApplicationListener sample;
-
-        try {
-            // get class object by name
-            Class<ApplicationListener> clazz = ClassReflection.forName(name);
-
-            // create new instance of our sample class
-            sample = ClassReflection.newInstance(clazz);
-        }
-        catch (Exception e) {
-            throw new RuntimeException("Cannot create sample with name = " + name, e);
-        }
+        ApplicationListener sample = SampleFactory.newSample(name);
 
         lwjglAWTCanvas = new LwjglAWTCanvas(sample);
         lwjglAWTCanvas.getCanvas().setSize(CANVAS_WIDTH, HEIGHT);

@@ -4,9 +4,13 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.sampler.common.SampleBase;
+import com.sampler.common.SampleInfo;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
-public class GdxGeneratedSample extends ApplicationAdapter {
+public class GdxGeneratedSample extends SampleBase {
+    public static final SampleInfo SAMPLE_INFO = new SampleInfo(GdxGeneratedSample.class);
+
     private SpriteBatch batch;
     private Texture image;
 

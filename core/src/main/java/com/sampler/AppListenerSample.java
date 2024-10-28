@@ -1,17 +1,19 @@
 package com.sampler;
 
 import com.badlogic.gdx.Application;
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Logger;
-import com.badlogic.gdx.utils.ScreenUtils;
+import com.sampler.common.SampleBase;
+import com.sampler.common.SampleInfo;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
-public class AppListenerSample implements ApplicationListener {
+public class AppListenerSample extends SampleBase {
+
     private static final Logger log = new Logger("AppListenerSample", Logger.DEBUG);
+
+    public static final SampleInfo SAMPLE_INFO = new SampleInfo(AppListenerSample.class);
+
     private boolean renderInterrupted = true;
 
     @Override

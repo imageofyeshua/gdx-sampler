@@ -8,9 +8,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Logger;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.sampler.common.SampleBase;
+import com.sampler.common.SampleInfo;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
-public class GdxModuleSample implements ApplicationListener {
+public class GdxModuleSample extends SampleBase {
+    public static final SampleInfo SAMPLE_INFO = new SampleInfo(GdxModuleSample.class);
 
     private static final Logger log = new Logger(GdxModuleSample.class.getName(), Logger.DEBUG);
 

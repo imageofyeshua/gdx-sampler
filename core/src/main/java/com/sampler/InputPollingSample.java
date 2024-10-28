@@ -10,10 +10,14 @@ import com.badlogic.gdx.utils.Logger;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.sampler.common.SampleBase;
+import com.sampler.common.SampleInfo;
 import com.sampler.utils.GdxUtils;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
-public class InputPollingSample implements ApplicationListener {
+public class InputPollingSample extends SampleBase {
+
+    public static final SampleInfo SAMPLE_INFO = new SampleInfo(InputPollingSample.class);
 
     private static final Logger log = new Logger(InputPollingSample.class.getName(), Logger.DEBUG);
 
